@@ -24,6 +24,8 @@ export interface BillData {
     billNumber?: string;
     savings?: number;
     isPartial?: boolean;
+    isDemo?: boolean;
+    predefinedIssues?: any[];
 }
 
 const HOSPITALS = ["City Care Speciality", "Apollo Health", "Fortis Hospital", "Max Healthcare", "AIIMS Delhi"];
@@ -118,6 +120,12 @@ const QTY_LIMITS: Record<string, number> = {
 };
 
 export function detectAnomalies(bill: BillData) {
+    if (bill.isDemo && bill.predefinedIssues) {
+        bill.savings = bill.predefinedIssues.reduce((sum, issue) => sum + (issue.amount || 0), 0);
+        bill.severity = (bill.predefinedIssues.some(i => i.severity === "High")) ? "High" : "Medium";
+        return bill.predefinedIssues;
+    }
+
     const issues: any[] = [];
     let totalSavings = 0;
 
