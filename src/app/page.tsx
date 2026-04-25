@@ -13,7 +13,7 @@ export default function Home() {
 
 
       {/* Footer Placeholder for now */}
-      <footer className="py-12 border-t border-white/5 text-center text-slate-500 text-sm">
+      <footer className="py-12 border-t border-[#e5e7eb] text-center text-[#6b7280] text-sm bg-white">
         <div className="container mx-auto px-4">
           <p>© 2024 MediShield AI. Because every patient deserves a fair bill.</p>
         </div>

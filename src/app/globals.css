@@ -10,25 +10,26 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #020617;
-  --primary: #2563eb;
-  --secondary: #64748b;
-  --accent: #3b82f6;
+  --background: #f5f7fb;
+  --foreground: #111827;
+  --primary: #0d6efd;
+  --secondary: #6b7280;
+  --accent: #0d6efd;
   --card: #ffffff;
-  --card-foreground: #020617;
-  --border: #e2e8f0;
+  --card-foreground: #111827;
+  --border: #e5e7eb;
 }
 
+/* Base dark mode support intentionally limited to keep light medical SaaS focus */
 .dark {
-  --background: #020617;
-  --foreground: #f8fafc;
-  --primary: #3b82f6;
-  --secondary: #94a3b8;
-  --accent: #60a5fa;
-  --card: #0f172a;
-  --card-foreground: #f8fafc;
-  --border: #1e293b;
+  --background: #f5f7fb;
+  --foreground: #111827;
+  --primary: #0d6efd;
+  --secondary: #6b7280;
+  --accent: #0d6efd;
+  --card: #ffffff;
+  --card-foreground: #111827;
+  --border: #e5e7eb;
 }
 
 @layer base {
@@ -44,21 +45,21 @@
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(229, 231, 235, 0.5);
 }
 
 .glass-dark {
-  background: rgba(15, 23, 42, 0.7);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(229, 231, 235, 0.5);
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #ec4899);
+  background: linear-gradient(to right, #0d6efd, #0b5ed7, #4dabf7);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;

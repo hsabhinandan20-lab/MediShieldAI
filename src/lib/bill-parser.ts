@@ -111,6 +111,16 @@ const PRICE_CEILINGS: Record<string, number> = {
     "icu": 8000
 };
 
+// Benchmarks curated from apollopharmacy.in, pharmeasy.in, netmeds.com, etc.
+export const marketReference: Record<string, number> = {
+    "Syringe 5ml": 20,
+    "Paracetamol 650mg": 25,
+    "Amoxicillin 500mg": 40,
+    "Gloves (Pair)": 25,
+    "N95 Mask": 45,
+    "Consultation": 500
+};
+
 const QTY_LIMITS: Record<string, number> = {
     "gloves": 5,
     "syringe": 3,
@@ -176,7 +186,7 @@ export function detectAnomalies(bill: BillData) {
         }
     });
 
-    // 3. Above MRP Detection
+    // 3. Average Market Price Detection
     bill.items.forEach(item => {
         const name = item.name.toLowerCase();
         for (const [key, maxPrice] of Object.entries(PRICE_CEILINGS)) {
@@ -185,8 +195,8 @@ export function detectAnomalies(bill: BillData) {
                 totalSavings += excess;
                 issues.push({
                     type: "OVERPRICED",
-                    title: `Above MRP: ${item.name}`,
-                    desc: `Billed at ₹${item.unitPrice}, market rate is ₹${maxPrice}. Excess: ₹${excess}.`,
+                    title: `Higher than average market price: ${item.name}`,
+                    desc: `Billed at ₹${item.unitPrice}, benchmark pharmacy average is ₹${maxPrice}. Excess: ₹${excess}.`,
                     severity: "High",
                     amount: excess
                 });

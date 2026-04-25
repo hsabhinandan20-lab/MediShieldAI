@@ -11,21 +11,12 @@ export function Hero() {
         <section className="relative pt-20 pb-32 overflow-hidden">
             <div className="container mx-auto px-4">
                 <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
-                        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium mb-8"
-                    >
-                        <ShieldCheck className="w-4 h-4" />
-                        <span>Trusted by 10,000+ Patients & Families</span>
-                    </motion.div>
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
+                        className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-[#111827]"
                     >
                         AI That Protects You From <br />
                         <span className="text-gradient">Medical Bill Scams</span>
@@ -35,7 +26,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl"
+                        className="text-lg md:text-xl text-[#6b7280] mb-10 max-w-2xl"
                     >
                         Upload any hospital bill and instantly detect fraud, duplicate charges,
                         inflated medicine prices, and hidden taxes. Because every patient deserves a fair bill.
@@ -52,9 +43,6 @@ export function Hero() {
                                 Analyze My Bill <ArrowRight className="ml-2 w-5 h-5" />
                             </Button>
                         </Link>
-                        <Button variant="outline" className="h-12 px-8 text-base">
-                            <Play className="mr-2 w-4 h-4 fill-white" /> Watch Demo
-                        </Button>
                     </motion.div>
 
                     {/* Floating UI Elements / Mockup */}
@@ -64,16 +52,16 @@ export function Hero() {
                         transition={{ duration: 1, delay: 0.4 }}
                         className="relative w-full max-w-5xl mx-auto"
                     >
-                        <div className="absolute inset-0 bg-blue-500/20 blur-[120px] rounded-full -z-10" />
-                        <div className="glass-dark border border-white/10 rounded-2xl p-4 md:p-8 shadow-2xl relative overflow-hidden group text-left">
-                            <div className="flex items-center justify-between mb-8 border-b border-white/5 pb-4">
+                        <div className="absolute inset-0 bg-[#0d6efd]/5 blur-[120px] rounded-full -z-10" />
+                        <div className="bg-white border border-[#e5e7eb] rounded-2xl p-4 md:p-8 shadow-xl relative overflow-hidden group text-left">
+                            <div className="flex items-center justify-between mb-8 border-b border-[#e5e7eb] pb-4">
                                 <div className="flex items-center gap-3">
-                                    <div className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center">
-                                        <FileSearch className="w-5 h-5 text-blue-400" />
+                                    <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center border border-slate-100">
+                                        <FileSearch className="w-5 h-5 text-[#0d6efd]" />
                                     </div>
                                     <div>
-                                        <h4 className="font-semibold text-sm">HOSPITAL_INVOICE_042.PDF</h4>
-                                        <p className="text-xs text-slate-500">Scanning in progress...</p>
+                                        <h4 className="font-semibold text-sm text-[#111827]">HOSPITAL_INVOICE_042.PDF</h4>
+                                        <p className="text-xs text-[#6b7280]">Scanning in progress...</p>
                                     </div>
                                 </div>
                                 <div className="flex gap-2">
@@ -89,8 +77,8 @@ export function Hero() {
                                     { label: "Price Anomaly", count: "₹4,250 Over", color: "text-amber-400" },
                                     { label: "Total Mismatch", count: "₹1,200 Gap", color: "text-red-400" },
                                 ].map((item, i) => (
-                                    <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/10">
-                                        <p className="text-xs text-slate-400 mb-1">{item.label}</p>
+                                    <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                                        <p className="text-xs text-[#6b7280] mb-1 font-medium">{item.label}</p>
                                         <p className={cn("font-bold text-lg", item.color)}>{item.count}</p>
                                     </div>
                                 ))}

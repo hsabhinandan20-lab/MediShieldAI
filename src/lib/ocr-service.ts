@@ -49,7 +49,7 @@ export async function performOCR(imageFile: File): Promise<Partial<BillData>> {
             isDemo: true,
             predefinedIssues: [
                 { type: "DUPLICATE", title: "Duplicate Charge: Paracetamol 650mg", desc: "Paracetamol 650mg billed twice.", severity: "High", amount: 120 },
-                { type: "OVERPRICED", title: "Above MRP: Syringe 5ml", desc: "Syringe billed at ₹100/unit. Standard clinical rate is ₹20.", severity: "High", amount: 400 }
+                { type: "OVERPRICED", title: "Syringe price higher than average market price based on pharmacy benchmarks", desc: "Billed at ₹100/unit. Benchmark pharmacy average is ₹20. Potential savings identified.", severity: "High", amount: 400 }
             ],
             items: [
                 { id: "p1", name: "Paracetamol 650mg", qty: 2, unitPrice: 60, total: 120, category: "Medicine", issues: [] },
